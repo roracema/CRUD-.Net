@@ -1,0 +1,21 @@
+﻿@model _05_Fiap.Web.AspNet.Models.Zoo
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h2>Editar</h2>
+
+<h4>Zoo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editar">
+            <input asp-for="ZooId"/>
+            <partial name="_formulario"/>            
+            <botao texto="Atualizar"/>
+        </form>
+    </div>
+</div>
+
+
