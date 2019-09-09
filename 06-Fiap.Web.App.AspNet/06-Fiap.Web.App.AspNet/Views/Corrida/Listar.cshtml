@@ -1,0 +1,53 @@
+﻿@model IEnumerable<_06_Fiap.Web.App.AspNet.Models.Corrida>
+
+@{
+    ViewData["Title"] = "Listar";
+}
+
+<h1>Listar</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.distancia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Premiacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.distancia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Premiacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria)
+            </td>
+            <td>
+                <a asp-action="Editar" asp-route-id="@item.CorridaId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CorridaId">Details</a> |
+                <a asp-action="Deletar" asp-route-id="@item.CorridaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
